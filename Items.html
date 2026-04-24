@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FutureTech| Products</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: white;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(0,0,0,0.9);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* HERO */
+        .hero {
+            height: 50vh;
+            background: url("https://images.unsplash.com/photo-1518770660439-4636190af475") no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin: 0;
+        }
+
+        .hero p {
+            color: #ccc;
+            font-size: 18px;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #ccc;
+        }
+
+        /* PRODUCT GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #111;
+            padding: 15px;
+            border-radius: 12px;
+            transition: 0.3s;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: #1a1a1a;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 10px 0 5px;
+        }
+
+        .price {
+            color: #00ffcc;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: white;
+            color: black;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ccc;
+        }
+
+        /* FADE ANIMATION */
+        .fade {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<nav>
+    <a href="homepage.html">Home</a>
+    <a href="Items.html">Items</a>
+    <a href="repairs.html">Repairs</a>
+	 <a href="About.html">About Us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Our Products</h1>
+        <p>Latest tech at the best prices</p>
+    </div>
+</div>
+
+
+<div class="section fade">
+    <h2>Featured Devices</h2>
+    <p>Choose from our top tech selections</p>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://production-static.mobilesyrup.com/uploads/2025/09/apple-iphone-17-pro-header-scaled.jpg">
+            <h3>iphone 17 pro max </h3>
+            <p class="price">$1,199</p>
+          <a href="checkout.html?product=	Iphone 17 pro max %20&price=1199" class="btn">
+    Buy Now
+</a>
+		
+        </div>
+
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/I/81n1T4CYfmL._AC_UY218_.jpg">
+            <h3>ASUS ROG Strix</h3>
+            <p class="price">$1,391</p>
+           <a href="checkout.html?product=	ASUS ROG Strix %20&price=1391" class="btn">
+		   Buy Now
+</a>
+        </div>
+
+        <div class="card">
+            <img src="https://www.skullcandy.com/cdn/shop/files/Icon180_Black_1.png?v=1769106904">
+            <h3>Wireless Headphones</h3>
+            <p class="price">$200</p>
+            <a href="checkout.html?product=	Wireless headphones %20&price=200" class="btn">
+		   Buy Now
+</a>
+        </div>
+
+      
+            <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcBihEgm5Hvry5Nfd4L4hG0AYeOwUkwI929A&s">
+            <h3>S26 ULTRA</h3>
+            <p class="price">$1,199</p>
+           <a href="checkout.html?product=	S26 ULTRA %20&price=1199" class="btn">
+		   Buy Now
+</a>
+        </div>
+
+
+       <div class="card">
+            <img src="https://i5.walmartimages.com/seo/Set-of-2-Universal-3-in-1-Retractable-USB-Charger-Cable-with-Mini-Type-C-and-Micro-USB-Connectors-for-Cell-Phones-and-Tablets-Black_f973826e-94ab-457c-9e7d-4b9a672c18bf.9dd9db37ab99b1b978f69e34bf909baf.jpeg">
+            <h3>CHARGER SET</h3>
+            <p class="price">$29</p>
+           <a href="checkout.html?product=	CHARGER SET %20&price=29" class="btn">
+		   Buy Now
+</a>
+        </div>
+		
+		
+       <div class="card">
+            <img src="https://acom.pk/cdn/shop/articles/Things_to_Look_for_When_Buying_a_New_HP_Laptop_1200x.webp?v=1717138215">
+            <h3>HP Laptop </h3>
+            <p class="price">$599</p>
+           <a href="checkout.html?product= HP Laptop %20&price=599" class="btn">
+		   Buy Now
+</a>
+        </div>
+		
+	  <div class="card">
+            <img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/bento-5043500-iPadLOB-iPadProM5-Compare_sv2-353b627b-7b81-4c22-a7fb-3df1034339ba.jpg;format=webp">
+            <h3>Ipads </h3>
+            <p class="price">$499-699</p>
+           <a href="checkout.html?product=Ipads  %20&price=499-699" class="btn">
+		   Buy Now
+</a>
+        </div>
+			
+		
+    </div>
+</div>
+
+
+<script>
+const items = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+items.forEach(item => {
+    observer.observe(item);
+});
+</script>
+
+</body>
+</html>
