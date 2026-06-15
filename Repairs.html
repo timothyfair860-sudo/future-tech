@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FutureTech | Repairs</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: white;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(0,0,0,0.9);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* HERO */
+        .hero {
+            height: 60vh;
+            background: url("https://images.unsplash.com/photo-1587829741301-dc798b83add3") no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        /* SECTIONS */
+        .section {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        /* SERVICES CARDS */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #111;
+            padding: 20px;
+            width: 250px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: #1a1a1a;
+        }
+
+        /* FORM */
+        .form-container {
+            background: #111;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: white;
+            color: black;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ccc;
+        }
+
+        /* FADE IN */
+        .fade {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Items.html">Items</a>
+    <a href="repairs.html">Repairs</a>
+	<a href="About.html">About Us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Expert Repairs</h1>
+        <p>Fast, affordable, and reliable tech repair service</p>
+    </div>
+</div>
+
+
+<div class="section fade">
+    <h2>What We Fix</h2>
+    <p>We repair all major devices quickly and safely</p>
+
+    <div class="services">
+        <div class="card">
+            <h3>📱 Phones</h3>
+            <p>Screen replacement, battery, software issues</p>
+        </div>
+
+        <div class="card">
+            <h3>💻 Laptops</h3>
+            <p>Hardware repair, upgrades, virus removal</p>
+        </div>
+
+        <div class="card">
+            <h3>🎧 Accessories</h3>
+            <p>Headphones, chargers, controllers</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="section fade">
+    <h2>Book a Repair</h2>
+    <p>Fill out the form and we’ll contact you</p>
+
+    <div class="form-container">
+        <input type="text" placeholder="Your Name">
+        <input type="text" placeholder="Device Type (Phone, Laptop, etc.)">
+        <textarea rows="4" placeholder="Describe the issue"></textarea>
+        <button>Submit Request</button>
+    </div>
+</div>
+
+
+<script>
+const items = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+items.forEach(item => {
+    observer.observe(item);
+});
+</script>
+
+</body>
+</html>
