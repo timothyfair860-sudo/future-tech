@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FutureTech</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: white;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(0,0,0,0.8);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            background: url("https://static.wixstatic.com/media/5fc807_9e79ee116e7c43c2b0da997e04be52f2~mv2.jpg/v1/fill/w_740,h_374,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5fc807_9e79ee116e7c43c2b0da997e04be52f2~mv2.jpg") no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: white;
+            color: black;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ccc;
+        }
+
+        /* SECTIONS (FULL SCREEN + FADE) */
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+
+            background-size: cover;
+            background-position: center;
+
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+            position: relative;
+        }
+
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* DARK OVERLAY FOR READABILITY */
+        .section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .section-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #ddd;
+        }
+
+        /* FINAL SECTION */
+        .dark {
+            background: #111;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<nav>
+      <a href="index.html">Home</a>
+    <a href="repairs.html">Repairs</a>
+    <a href="contact.html">Contact</a>
+	 <a href="About.html">About Us</a>
+	     <a href="Items.html">Items</a>
+</nav>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>FutureTech</h1>
+        <p>Next-Level Tech & Repairs</p>
+        <a href="Items.html" class="btn">Shop Now</a>
+    </div>
+</div>
+
+
+<div class="section" style="background-image: url('https://images.indianexpress.com/2024/01/best-high-end-smartphones-2024.jpg');">
+    <div class="section-content">
+        <h2>Powerful Smartphones</h2>
+        <p>Experience speed, performance, and style.</p>
+    </div>
+</div>
+
+
+<div class="section" style="background-image: url('https://imgmedia.larepublica.pe/1000x590/larepublica/original/2022/01/03/61d27e54f588a6527b2aca80.webp');">
+    <div class="section-content">
+        <h2>High Performance Laptops</h2>
+        <p>Perfect for work, school, and gaming.</p>
+    </div>
+</div>
+
+
+<div class="section" style="background-image: url('https://m.media-amazon.com/images/I/71VUOSslZSL._AC_UF894,1000_QL80_.jpg');">
+    <div class="section-content">
+        <h2>Accessories That Matter</h2>
+        <p>Headphones, keyboards, and more.</p>
+    </div>
+</div>
+
+<div class="section" style="background: url('https://tek.store/cdn/shop/articles/Apple-Self-Service-Mac-Repair-August-2022-hero.jpg.og_bef6e7ee-76db-4ad1-9610-6c22683ef32b.jpg?v=1741555274&width=1100') no-repeat center/cover;">
+    <div class="section-content">
+        <h2>Expert Repairs</h2>
+        <p>Fast, reliable, and affordable service.</p>
+        <a href="repairs.html" class="btn">View Repairs</a>
+    </div>
+</div>
+
+<script>
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+</script>
+
+</body>
+</html>
